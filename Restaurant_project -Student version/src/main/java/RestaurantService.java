@@ -36,7 +36,14 @@ public class RestaurantService {
     }
 
     public int displayPrice(List<String> listname, String restaurant_name) throws restaurantNotFoundException {
-        return 0;
+        int total = 0;
+        Restaurant restaurant_choosen=findRestaurantByName(restaurant_name);
+        for (int i = 0; i < listname.size(); i++) {
+            String selected_dish = listname.get(i);
+            Item item = restaurant_choosen.findItemUsingName(selected_dish);
+            total = total + item.getPrice();
+        }
+        return total;
     }
 }
 
