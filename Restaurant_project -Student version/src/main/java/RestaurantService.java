@@ -5,12 +5,14 @@ import java.util.List;
 public class RestaurantService {
     private static List<Restaurant> restaurants = new ArrayList<>();
 
-    public Restaurant findRestaurantByName(String restaurantName) throws restaurantNotFoundException{
-        for(int i = 0; i < restaurants.size(); i++){
+    public Restaurant findRestaurantByName(String restaurantName) throws restaurantNotFoundException {
+        for (int i = 0; i < restaurants.size(); i++) {
             if (restaurants.get(i).getName().equals(restaurantName)) {
-                int index=i;
+                int index = i;
                 return restaurants.get(index);
-            }else{ throw new restaurantNotFoundException(restaurantName);}
+            } else {
+                throw new restaurantNotFoundException(restaurantName);
+            }
         }
         return null;
         //DELETE ABOVE STATEMENT AND WRITE CODE HERE
@@ -32,4 +34,9 @@ public class RestaurantService {
     public List<Restaurant> getRestaurants() {
         return restaurants;
     }
+
+    public int displayPrice(List<String> listname, String restaurant_name) throws restaurantNotFoundException {
+        return 0;
+    }
 }
+
